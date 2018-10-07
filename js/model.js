@@ -1,17 +1,19 @@
 document.addEventListener('DOMContentLoaded', slideShow);
 
-const api = 'AIzaSyBghJmzrFiYYr4ClicgFYHvN4ubVsnJxuE';
 
+//Slideshow
  function slideShow() {
     var elems = document.querySelectorAll('.carousel');
     var instance = M.Carousel.init(elems, {
-        fullWidth: false,
+        fullWidth: true,
         duration: 400,
         noWrap: false,
         indicators: true,
         numVisible: 2
       });
   }
+
+  // Carousel
 pauseSlide();
 function pauseSlide() {
     const elem = document.querySelector('.carousel')
@@ -27,6 +29,27 @@ elem.addEventListener('mouseup', () => {
 })
 }
 
+//SideNav
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, {});
+  });
+
+// Modal
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, {});
+  });
+
+  document.querySelector('.modal-trigger').addEventListener('click', getMaterialDate);
+
+  function getMaterialDate() {
+
+  }
+
+
+
+//fixed nav on scroll
 window.onscroll = () => {myFunction()};
 
 const navbar = document.querySelector('nav');
@@ -39,7 +62,7 @@ function myFunction() {
       navbar.classList.remove("sticky");
     }
   }
-  
+
 
   let map;
   let marker;
@@ -58,3 +81,43 @@ function myFunction() {
   }
 
 
+//Form
+
+const form = document.querySelector('.formed');
+
+form.addEventListener('submit', subForm);
+
+function subForm(e) {
+  e.preventDefault();
+
+const inputs = document.querySelectorAll('input');
+
+let names = [];
+inputs.forEach(input => {
+  names.push({name: input.dataset.name, value: input.value});
+})
+
+const userSub = names.reduce((obj, item) => {
+  obj[item.name] = item.value;
+  return obj;
+}, {});
+delete userSub.undefined
+console.log(userSub);
+
+const elems = document.querySelector('.modal');
+const instance = M.Modal.getInstance(elems);
+
+  elems.innerHTML = `<h4>Info Submitted!</h4>`;
+  setTimeout(() => {
+    instance.close();
+  }, 3000)
+}
+
+
+
+
+// Date Picker
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.datepicker');
+  var instances = M.Datepicker.init(elems, {});
+});
