@@ -63,7 +63,7 @@ function myFunction() {
     }
   }
 
-
+// Google Map
   let map;
   let marker;
   function initMap() {
@@ -120,9 +120,27 @@ const instance = M.Modal.getInstance(elems);
 
 
 
-
 // Date Picker
 document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.datepicker');
   var instances = M.Datepicker.init(elems, {});
 });
+
+
+const navButtons = document.querySelectorAll('.gobot');
+
+navButtons.forEach(item => item.addEventListener('click', scroller));
+
+function scroller() {
+  if (this.classList.value.includes('cntact')) {
+    const contactInfo = document.querySelector('.contact');
+    const divHeight = contactInfo.clientHeight;
+    window.scrollTo(0, contactInfo.offsetHeight + (divHeight / 2));
+  } 
+  if (this.classList.value.includes('cost')) {
+    console.log('hello')
+    const pricingInfo = document.querySelector('.pricing');
+    const divHeight = pricingInfo.clientHeight;
+    window.scrollTo(0, pricingInfo.offsetHeight + (window.innerHeight - divHeight));
+  }
+}

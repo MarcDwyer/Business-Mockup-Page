@@ -1,10 +1,16 @@
 :root {
     --bordercolor: #e0e0e0;
+    --darkcolor: #212121;
+    --darkborder: black;
 }
 
 body {
     margin: 0;
     padding: 0;
+    background-color: #eee;
+}
+.divider {
+    background-color: var(--bordercolor);
 }
 nav {
     overflow: hidden;
@@ -75,6 +81,7 @@ nav {
     order: 1;
     display: flex;
     flex-wrap: wrap;
+    border-radius: 2px;
     width: 50%;
     margin-left: auto;
     margin-right: auto; 
@@ -95,7 +102,6 @@ nav {
     height: 400px;
     order: 0;
     min-width: 275px;
-    width: 25%;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -129,7 +135,7 @@ nav {
 .formed {
     margin-top: 25px;
 }
-.modal {width: 65% !important ; height: 45% !important;}
+.modal {width: 65% !important ; height: 55% !important;}
 
 .subbtn {
     margin-top: 25px;
@@ -153,6 +159,10 @@ nav {
     margin-bottom: 25px;
 }
 
+.fa-bars {
+    font-size: 22px;
+}
+
 @media only screen and (max-width: 1180px) {
         .maps {
             order: 1;
@@ -160,7 +170,7 @@ nav {
         .contactinfo {
             order: 2;
             width: 35%;
-            margin-left: 10px;
+            margin-left: 35px;
         }
         .hours {
             order: 0;
