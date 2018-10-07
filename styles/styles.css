@@ -1,5 +1,5 @@
 :root {
-    --bordercolor: #BEBEBE;
+    --bordercolor: #e0e0e0;
 }
 
 body {
@@ -94,15 +94,16 @@ nav {
 .maps {
     height: 400px;
     order: 0;
-    width: 32%;
+    min-width: 275px;
+    width: 25%;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 .contactinfo {
     order: 1;
-    width: 32%;
-    margin-left:25px;
+    width: 30%;
+    margin-left: auto;
     font-size: 16px;
 }
 .info {
@@ -115,8 +116,9 @@ nav {
 }
 .hours {
     order: 2;
-    width: 32%;
+    width: 30%;
     display: flex;
+    margin-left: auto;
     flex-direction: column;
 
 }
@@ -127,7 +129,7 @@ nav {
 .formed {
     margin-top: 25px;
 }
-.modal {width: 50% !important ; height: 65% !important ; }
+.modal {width: 65% !important ; height: 65% !important;}
 
 .subbtn {
     margin-top: 25px;
@@ -136,4 +138,73 @@ nav {
 .datepicker-modal {
     width: 100% !important;
     max-height: 650px !important;
+}
+
+.form-success {
+    position: fixed;
+    bottom: 5px;
+    left: 45px;
+}
+
+.modal-heading {
+    margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 1180px) {
+        .maps {
+            order: 1;
+        }
+        .contactinfo {
+            order: 2;
+            width: 35%;
+            margin-left: 10px;
+        }
+        .hours {
+            order: 0;
+            margin-bottom: 10px;
+            width: 100%;
+            border-bottom: 1px solid var(--bordercolor);
+        }
+        .info {
+            margin-bottom: 10px;
+        }
+}
+
+@media only screen and (max-width: 700px) {
+    .modal {
+        width: 95% !important;
+        height: 95% !important;
+    }
+    .carousel {
+        display: none;
+    }
+    .trainer {
+        order: 0;
+        width: 100%;
+    }
+    .trainer img {
+        margin-left: auto;
+        margin-right: auto;
+        width:275px;
+        height: 325px;
+    }
+    .trainer a {
+        margin-left: auto;
+        margin-right: auto;
+        width: 275px;
+    }
+    .textabout {
+        order: 1;
+        width: 100%;
+    }
+    .maps {
+        width: 100%;
+    }
+    .contactinfo {
+        width: 100%;
+        border-top: solid 1px var(--bordercolor);
+        border-bottom: solid 1px var(--bordercolor);
+        border-radius: 10px;
+        margin-bottom: 25px;
+    }
 }

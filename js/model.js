@@ -84,14 +84,12 @@ function myFunction() {
 //Form
 
 const form = document.querySelector('.formed');
-
 form.addEventListener('submit', subForm);
 
 function subForm(e) {
   e.preventDefault();
 
 const inputs = document.querySelectorAll('input');
-
 let names = [];
 inputs.forEach(input => {
   names.push({name: input.dataset.name, value: input.value});
@@ -102,15 +100,22 @@ const userSub = names.reduce((obj, item) => {
   return obj;
 }, {});
 delete userSub.undefined
-console.log(userSub);
 
 const elems = document.querySelector('.modal');
-const instance = M.Modal.getInstance(elems);
 
-  elems.innerHTML = `<h4>Info Submitted!</h4>`;
+if (!form.querySelector('.form-success')) {
+const successDiv = document.createElement('h5');
+successDiv.classList.add('form-success')
+successDiv.textContent = 'Success! See you then!';
+elems.appendChild(successDiv);
+}
+
+
+const instance = M.Modal.getInstance(elems);
   setTimeout(() => {
     instance.close();
-  }, 3000)
+    this.reset();
+  }, 2000)
 }
 
 
