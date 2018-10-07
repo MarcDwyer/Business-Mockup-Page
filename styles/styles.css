@@ -129,17 +129,20 @@ nav {
 .formed {
     margin-top: 25px;
 }
-.modal {width: 65% !important ; height: 65% !important;}
+.modal {width: 65% !important ; height: 45% !important;}
 
 .subbtn {
     margin-top: 25px;
 }
 
 .datepicker-modal {
+    top: 0 !important;
     width: 100% !important;
-    max-height: 650px !important;
+    height: 450px !important;
 }
-
+.datepicker-container {
+    height: 100% !important;
+}
 .form-success {
     position: fixed;
     bottom: 5px;
